@@ -1,3 +1,7 @@
+import os
+import dotenv
+from dotenv import load_detenv, load_dotenv
+
 import datetime
 import logging
 import pprint
@@ -8,13 +12,18 @@ from cogs.osu import osu
 from cogs.osuAPI import osuAPI
 from discord.ext import commands
 
+# Logging
 logger = logging.getLogger('discord')
 logger.setLevel(logging.INFO)
 handler = logging.FileHandler(filename='discordbot.log', encoding='utf-8', mode='w')
 handler.setFormatter(logging.Formatter('%(asctime)s:%(levelname)s:%(name)s: %(message)s'))
 logger.addHandler(handler)
 
+# Loading .env
+load_dotenv()
+
 # Global Variables
+token = os.getenv('TOKEN_KEY')
 bot = commands.Bot(command_prefix='.')
 
 # Bot initialisation
@@ -49,4 +58,4 @@ bot.add_cog(osu(bot))
 
 # Run the bot with the token provided
 # TODO: Load bot token from file so that it is not leaked on GitHub
-bot.run()
+bot.run(token)
