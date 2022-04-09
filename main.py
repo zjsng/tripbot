@@ -1,6 +1,6 @@
 import os
 import dotenv
-from dotenv import load_detenv, load_dotenv
+from dotenv import load_dotenv
 
 import datetime
 import logging
@@ -23,7 +23,7 @@ logger.addHandler(handler)
 load_dotenv()
 
 # Global Variables
-token = os.getenv('TOKEN_KEY')
+bot_token = os.getenv('TOKEN')
 bot = commands.Bot(command_prefix='.')
 
 # Bot initialisation
@@ -45,12 +45,13 @@ async def on_ready():
 async def on_message(message):
     if message.author == bot.user:
         return
-        
+    
     # Required to process any @bot.command() decorated commands due to on_message overriding
     await bot.process_commands(message)
 
 @bot.command()
 async def test(ctx):
+    print("Test command triggered.")
     await ctx.send("Sample command.")
 
 # Attach cogs to the bot before starting to run it
@@ -58,4 +59,4 @@ bot.add_cog(osu(bot))
 
 # Run the bot with the token provided
 # TODO: Load bot token from file so that it is not leaked on GitHub
-bot.run(token)
+bot.run(bot_token)
