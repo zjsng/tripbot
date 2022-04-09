@@ -48,4 +48,5 @@ async def test(ctx):
 bot.add_cog(osu(bot))
 
 # Run the bot with the token provided
-bot.run('NjI0NDg5NTkxMDI5NjI4OTI5.XYRvQA.OKq2to64-zW1mVgihlRsonTChoo')
+# TODO: Load bot token from file so that it is not leaked on GitHub
+bot.run()
