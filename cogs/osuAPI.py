@@ -1,3 +1,7 @@
+import os
+import dotenv
+from dotenv import load_dotenv
+
 import asyncio
 import json
 import datetime
@@ -11,9 +15,13 @@ from os import getenv
 API_URL = 'https://osu.ppy.sh/api/v2'
 TOKEN_URL = 'https://osu.ppy.sh/oauth/token'
 
+# Loading .env
+load_dotenv()
+
 # Global Variables
 token = ''
 token_expire = ''
+osu_api = os.getenv('OSUTOKEN')
 
 class osuAPI(object):
     # Get Functions
@@ -41,7 +49,7 @@ class osuAPI(object):
     async def retrieve_oauth_token():
         body = {
             "client_id": 11507,
-            "client_secret": 'tIwYM4hhyxcZvc4bLtIGTCCTvspOlLvjrdMMpFFo',
+            "client_secret": osu_api,
             "grant_type": "client_credentials",
             "scope": "public"
         }
