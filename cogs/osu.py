@@ -32,21 +32,21 @@ class osu(commands.Cog):
         #         pp_data.append(dictionary['pp'])
 
         count = (int(offset) * 5) + 1
-        embedMsg = discord.Embed(
+        embed_msg = discord.Embed(
             title="Top Plays",
             description=f"Showing page {int(offset) + 1} of the user's top plays",
             colour=ctx.author.roles[-1].colour)
-        embedMsg.set_footer(text=ctx.author)
-        valueStr = ''
+        embed_msg.set_footer(text=ctx.author)
+        value_str = ''
         for dict in response.json():
-            valueStr += "**{}. [{} [{}] ]({})** [{}]\n{}pp\n".format(
+            value_str += "**{}. [{} [{}] ]({})** [{}]\n{}pp\n".format(
                 count, dict['beatmapset']['title'], dict['beatmap']['version'], dict['beatmap']['url'],
                 dict['beatmap']['difficulty_rating'], dict['pp']
             )
             count += 1
-        embedMsg.add_field(name=f"Top {int(count)-1} osu! Standard Plays", value=valueStr, inline=False)
+        embed_msg.add_field(name=f"Top {int(count)-1} osu! Standard Plays", value=value_str, inline=False)
 
-        await ctx.channel.send(embed=embedMsg)
+        await ctx.channel.send(embed=embed_msg)
 
 # Function for loading as an extension
 def setup(bot):
