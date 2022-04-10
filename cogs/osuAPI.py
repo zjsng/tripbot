@@ -21,7 +21,7 @@ load_dotenv()
 # Global Variables
 token = ''
 token_expire = ''
-osu_api = os.getenv('OSUTOKEN')
+osu_api = os.getenv('OSUSECRET')
 
 class osuAPI(object):
     # Get Functions

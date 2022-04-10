@@ -25,6 +25,7 @@ load_dotenv()
 # Global Variables
 bot_token = os.getenv('TOKEN')
 bot = commands.Bot(command_prefix='.')
+cogs = ["cogs.osu"]
 
 # Bot initialisation
 # API token is requested on init of the bot
@@ -49,14 +50,25 @@ async def on_message(message):
     # Required to process any @bot.command() decorated commands due to on_message overriding
     await bot.process_commands(message)
 
+# Test command to check if the bot is alive
 @bot.command()
 async def test(ctx):
     print("Test command triggered.")
-    await ctx.send("Sample command.")
+    await ctx.send("Sample command")
 
-# Attach cogs to the bot before starting to run it
-bot.add_cog(osu(bot))
+# Command to reload ALL cogs
+@bot.command()
+async def reload(ctx):
+    print("Reloading all cogs...")
+    for cog in cogs:
+        bot.reload_extension(cog)
+    await ctx.send("Cogs reloaded")
+
+# Attach cogs as extensions to the bot before starting to run it
+# Attaching as extension allows for hot reload of cogs
+if __name__ == "__main__":
+    for cog in cogs:
+        bot.load_extension(cog)
 
 # Run the bot with the token provided
-# TODO: Load bot token from file so that it is not leaked on GitHub
 bot.run(bot_token)
