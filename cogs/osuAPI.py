@@ -4,12 +4,12 @@ from dotenv import load_dotenv
 
 import asyncio
 import json
-import datetime
 import aiohttp
 import discord
 import requests
 
 from os import getenv
+from datetime import datetime
 
 # Constant Global Variables
 API_URL = 'https://osu.ppy.sh/api/v2'
@@ -34,7 +34,7 @@ class osuAPI(object):
     
     # Always call get_token() before sending a request with the API to ensure token validity
     async def get_token():
-        current_time_sec = datetime.datetime.now().timestamp()
+        current_time_sec = datetime.now().timestamp()
 
         global token
         if not token or current_time_sec > token_expire:
@@ -57,7 +57,8 @@ class osuAPI(object):
         response = requests.post(TOKEN_URL, data=body)
 
         global token_expire
-        token_expire = datetime.datetime.now().timestamp() + int(response.json().get('expires_in'))
+        token_expire = datetime.now().timestamp() + int(response.json().get('expires_in'))
+        print(f"Token expires at {datetime.fromtimestamp(token_expire)}, time now is {datetime.now()}")
 
         return response.json().get('access_token')
 

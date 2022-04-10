@@ -16,21 +16,16 @@ class osu(commands.Cog):
         # Users would start with 1 instead of a 0
         offset = int(offset) - 1
 
+        # Call on the API for the required information
         params = {
             'include_fails': 0,
             'mode': 'osu',
             'limit': 5,
             'offset': int(offset) * 5
         }
-
         response = await osuAPI.get_response(f'{osuAPI.get_api_url()}/users/8497340/scores/best', params=params)
 
-        # Removed to streamline the code
-        # pp_data = []
-        # for dictionary in response.json():
-        #     if 'pp' in dictionary:
-        #         pp_data.append(dictionary['pp'])
-
+        # Formatting the embed's message with the response from osu! API
         count = (int(offset) * 5) + 1
         embed_msg = discord.Embed(
             title="Top Plays",

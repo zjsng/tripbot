@@ -45,3 +45,7 @@ asyncio.exceptions.TimeoutError
 2022-04-10 19:29:33,330:INFO:discord.client: Got a request to IDENTIFY the websocket.
 2022-04-10 19:29:38,844:INFO:discord.gateway: Shard ID None has sent the IDENTIFY payload.
 2022-04-10 19:29:39,269:INFO:discord.gateway: Shard ID None has connected to Gateway: ["gateway-prd-main-ktbp",{"micros":49882,"calls":["discord-sessions-blue-prd-2-54",{"micros":48922,"calls":["start_session",{"micros":40101,"calls":["discord-api-f5c7b6c7-ccmzl",{"micros":36201,"calls":["get_user",{"micros":6293},"add_authorized_ip",{"micros":1530},"get_guilds",{"micros":4752},"coros_wait",{"micros":2}]}]},"guilds_connect",{"micros":2,"calls":[]},"presence_connect",{"micros":6476,"calls":[]}]}]}] (Session ID: 571f995bce095b142e3f3d908588ca3a).
+2022-04-10 20:35:12,778:INFO:discord.client: Cleaning up tasks.
+2022-04-10 20:35:12,778:INFO:discord.client: Cleaning up after 1 tasks.
+2022-04-10 20:35:12,780:INFO:discord.client: All tasks finished cancelling.
+2022-04-10 20:35:12,781:INFO:discord.client: Closing the event loop.
