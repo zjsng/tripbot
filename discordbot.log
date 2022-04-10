@@ -2,3 +2,46 @@
 2022-04-10 14:58:39,431:INFO:discord.client: logging in using static token
 2022-04-10 14:58:40,589:INFO:discord.gateway: Shard ID None has sent the IDENTIFY payload.
 2022-04-10 14:58:40,949:INFO:discord.gateway: Shard ID None has connected to Gateway: ["gateway-prd-main-vnwb",{"micros":97222,"calls":["discord-sessions-blue-prd-2-73",{"micros":96245,"calls":["start_session",{"micros":37820,"calls":["discord-api-f5c7b6c7-qj5g8",{"micros":33651,"calls":["get_user",{"micros":6661},"add_authorized_ip",{"micros":1563},"get_guilds",{"micros":2889},"coros_wait",{"micros":2}]}]},"guilds_connect",{"micros":1,"calls":[]},"presence_connect",{"micros":38965,"calls":[]}]}]}] (Session ID: cccae134f65c2f9f365f188504950169).
+2022-04-10 17:08:08,525:INFO:discord.gateway: Websocket closed with 1006, attempting a reconnect.
+2022-04-10 17:08:08,525:INFO:discord.client: Got a request to RESUME the websocket.
+2022-04-10 17:08:09,248:INFO:discord.gateway: Shard ID None has sent the RESUME payload.
+2022-04-10 17:08:09,517:INFO:discord.gateway: Shard ID None session has been invalidated.
+2022-04-10 17:08:09,773:INFO:discord.client: Got a request to IDENTIFY the websocket.
+2022-04-10 17:25:45,221:INFO:discord.gateway: Shard ID None has sent the IDENTIFY payload.
+2022-04-10 17:25:45,235:INFO:discord.gateway: Websocket closed with 1006, attempting a reconnect.
+2022-04-10 17:25:45,235:INFO:discord.client: Got a request to RESUME the websocket.
+2022-04-10 17:25:45,886:INFO:discord.gateway: Shard ID None has sent the RESUME payload.
+2022-04-10 17:25:46,171:INFO:discord.gateway: Shard ID None session has been invalidated.
+2022-04-10 17:25:46,450:INFO:discord.client: Got a request to IDENTIFY the websocket.
+2022-04-10 17:42:21,856:INFO:discord.gateway: Shard ID None has sent the IDENTIFY payload.
+2022-04-10 17:42:21,868:INFO:discord.gateway: Websocket closed with 1006, attempting a reconnect.
+2022-04-10 17:42:21,869:INFO:discord.client: Got a request to RESUME the websocket.
+2022-04-10 17:42:22,635:INFO:discord.gateway: Shard ID None has sent the RESUME payload.
+2022-04-10 17:42:22,911:INFO:discord.gateway: Shard ID None session has been invalidated.
+2022-04-10 17:42:23,176:INFO:discord.client: Got a request to IDENTIFY the websocket.
+2022-04-10 18:12:42,317:INFO:discord.gateway: Shard ID None has sent the IDENTIFY payload.
+2022-04-10 18:12:42,789:INFO:discord.gateway: Websocket closed with 1006, attempting a reconnect.
+2022-04-10 18:12:42,789:INFO:discord.client: Got a request to RESUME the websocket.
+2022-04-10 18:12:43,434:INFO:discord.gateway: Shard ID None has sent the RESUME payload.
+2022-04-10 18:12:43,700:INFO:discord.gateway: Shard ID None session has been invalidated.
+2022-04-10 18:12:43,967:INFO:discord.client: Got a request to IDENTIFY the websocket.
+2022-04-10 18:12:49,431:INFO:discord.gateway: Shard ID None has sent the IDENTIFY payload.
+2022-04-10 18:12:49,837:INFO:discord.gateway: Shard ID None has connected to Gateway: ["gateway-prd-main-wgk4",{"micros":102055,"calls":["discord-sessions-blue-prd-2-86",{"micros":100854,"calls":["start_session",{"micros":87845,"calls":["discord-api-f5c7b6c7-gcxp4",{"micros":78446,"calls":["get_user",{"micros":23259},"add_authorized_ip",{"micros":2569},"get_guilds",{"micros":7685},"coros_wait",{"micros":3}]}]},"guilds_connect",{"micros":1,"calls":[]},"presence_connect",{"micros":1,"calls":[]}]}]}] (Session ID: 74e0693dcac55739c24a573f4a69c1c6).
+2022-04-10 18:14:02,182:INFO:discord.gateway: Websocket closed with 1006, attempting a reconnect.
+2022-04-10 18:14:02,183:INFO:discord.client: Got a request to RESUME the websocket.
+2022-04-10 18:14:02,857:INFO:discord.gateway: Shard ID None has sent the RESUME payload.
+2022-04-10 18:14:03,161:INFO:discord.gateway: Shard ID None has successfully RESUMED session 74e0693dcac55739c24a573f4a69c1c6 under trace ["gateway-prd-main-2ssv",{"micros":614,"calls":["discord-sessions-blue-prd-2-86",{"micros":16}]}].
+2022-04-10 19:20:33,025:INFO:discord.gateway: Websocket closed with 1006, attempting a reconnect.
+2022-04-10 19:20:33,026:INFO:discord.client: Got a request to RESUME the websocket.
+2022-04-10 19:29:30,155:ERROR:discord.client: Attempting a reconnect in 1.79s
+Traceback (most recent call last):
+  File "/Users/jet/Library/Python/3.8/lib/python/site-packages/discord/client.py", line 563, in connect
+    self.ws = await asyncio.wait_for(coro, timeout=60.0)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.8/lib/python3.8/asyncio/tasks.py", line 501, in wait_for
+    raise exceptions.TimeoutError()
+asyncio.exceptions.TimeoutError
+2022-04-10 19:29:32,717:INFO:discord.gateway: Shard ID None has sent the RESUME payload.
+2022-04-10 19:29:33,022:INFO:discord.gateway: Shard ID None session has been invalidated.
+2022-04-10 19:29:33,330:INFO:discord.client: Got a request to IDENTIFY the websocket.
+2022-04-10 19:29:38,844:INFO:discord.gateway: Shard ID None has sent the IDENTIFY payload.
+2022-04-10 19:29:39,269:INFO:discord.gateway: Shard ID None has connected to Gateway: ["gateway-prd-main-ktbp",{"micros":49882,"calls":["discord-sessions-blue-prd-2-54",{"micros":48922,"calls":["start_session",{"micros":40101,"calls":["discord-api-f5c7b6c7-ccmzl",{"micros":36201,"calls":["get_user",{"micros":6293},"add_authorized_ip",{"micros":1530},"get_guilds",{"micros":4752},"coros_wait",{"micros":2}]}]},"guilds_connect",{"micros":2,"calls":[]},"presence_connect",{"micros":6476,"calls":[]}]}]}] (Session ID: 571f995bce095b142e3f3d908588ca3a).

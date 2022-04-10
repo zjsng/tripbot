@@ -45,7 +45,7 @@ class osuAPI(object):
 
         return token
     
-    # Generally to be only called by the get_token() function
+    # Generally to be ONLY called by the get_token() function
     async def retrieve_oauth_token():
         body = {
             "client_id": 11507,
@@ -61,7 +61,7 @@ class osuAPI(object):
 
         return response.json().get('access_token')
 
-    # Should be called by commands in the osu! cog for requesting information using the API
+    # Called by commands in the osu! cog for requesting information using the API
     async def get_response(URL, params):
         token = await osuAPI.get_token()
 
