@@ -27,6 +27,15 @@ class osuAPI(object):
     # Get Functions
     def get_api_url():
         return API_URL
+    
+    def get_params(fails, mode, limit, offset):
+        params = {
+            'include_fails': fails,
+            'mode': mode,
+            'limit': limit,
+            'offset': offset
+        }
+        return params
 
     # Set Functions
 
